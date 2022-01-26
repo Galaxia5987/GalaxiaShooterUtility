@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shooter Utility</title>
+    <script src="/node_modules/d3/dist/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="/networktables/utils.js"></script>
+    <script src="/networktables/camera.js"></script>
+    <script src="/networktables/networktables.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<div class="background"></div>
+<canvas style="border: 3px solid black" id="myChart" width="704" height="402"></canvas>
+<div id="draggable"></div>
+
+<script>
+    $(function () {
+        $("#draggable").draggable({
+            axis: 'x',
+            cursor: "crosshair",
+            containment: [464, 0, 1431, 0]
+        });
+    });
+</script>
+<div id="value"></div>
+<div id="box"></div>
+<input id="min" type="number" value="0">
+<input id="max" type="number" value="20">
+<input id="set1_input" type="number" value="0">
+<input id="set2_input" type="number" value="0">
+<input id="set3_input" type="number" value="0">
+<input id="set4_input" type="number" value="0">
+<input id="set5_input" type="number" value="0">
+<div class="button set1" onclick="set1()"></div>
+<div class="button set2" onclick="set2()"></div>
+<div class="button set3" onclick="set3()"></div>
+<div class="button set4" onclick="set4()"></div>
+<div class="button set5" onclick="set5()"></div>
+<div class="button set6" onclick="min=parseFloat(document.getElementById('min').value)"></div>
+<div class="button set7" onclick="max=parseFloat(document.getElementById('max').value)"></div>
+<div id="velocity_text">0</div>
+</body>
+</html>
